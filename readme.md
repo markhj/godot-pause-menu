@@ -1,5 +1,8 @@
 # ▶️ Godot: Pause menu
 
+![GitHub Tag](https://img.shields.io/github/v/tag/markhj/godot-pause-menu)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?label=license)
+
 This is a small example which demonstrates one approach to creating a pause/in-game menu in Godot.
 
 It's created with **Godot 4.2**. Compatibility with other versions is not guaranteed.

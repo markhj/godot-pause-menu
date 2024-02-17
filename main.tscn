@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqq3o3fvqwn5p"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_y354h"]
+[ext_resource type="Script" path="res://PauseMenu.gd" id="2_6bw70"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yeb1e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_61cuk"]
+font_size = 30
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_y354h")
+
+[node name="RotatingCube" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_yeb1e")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.959087, 0.283112, 0, -0.283112, 0.959087, 0, 0.993041, 2.15262)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.941312, 0.103386, -0.321316, 0, 0.951937, 0.306293, 0.337539, -0.288318, 0.896069, 0, 1.16085, 1.60271)
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("2_6bw70")
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseInfo" type="Label" parent="PauseMenu/CenterContainer"]
+layout_mode = 2
+text = "The pause menu is now visible"
+label_settings = SubResource("LabelSettings_61cuk")
+
+[node name="PauseInstructionContainer" type="CenterContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseInstructionContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="PauseInstructionLabel" type="Label" parent="PauseInstructionContainer/MarginContainer"]
+layout_mode = 2
+text = "Press ESC to toggle pause menu"
